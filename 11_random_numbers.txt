@@ -1,0 +1,4 @@
+import random
+if __name__ == "__main__":
+    n = int(input("How many random numbers?: "))
+    print([random.randint(1,100) for _ in range(n)])

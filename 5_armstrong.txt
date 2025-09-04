@@ -1,0 +1,6 @@
+def is_armstrong(n):
+    return n == sum(int(digit)**3 for digit in str(n))
+
+if __name__ == "__main__":
+    num = int(input("Enter three-digit number: "))
+    print(f"{num} is Armstrong: {is_armstrong(num)}")

@@ -1,0 +1,12 @@
+import math
+def sine_series(x, n):
+    res = 0
+    for i in range(n):
+        sign = (-1)**i
+        res += sign * (x**(2*i+1))/math.factorial(2*i+1)
+    return res
+if __name__ == "__main__":
+    from math import radians
+    deg = float(input("Degree: "))
+    n = int(input("Terms: "))
+    print("Sine series sum:", sine_series(radians(deg), n))

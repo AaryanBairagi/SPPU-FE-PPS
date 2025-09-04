@@ -1,0 +1,10 @@
+def partition_even_odd(lst):
+    even = [x for x in lst if x % 2 == 0]
+    odd = [x for x in lst if x % 2 != 0]
+    return even, odd
+if __name__ == "__main__":
+    n = int(input("N: "))
+    nums = [int(input()) for _ in range(n)]
+    even, odd = partition_even_odd(nums)
+    print("Even:", even)
+    print("Odd:", odd)

@@ -1,0 +1,13 @@
+def file_count(file_path, word):
+    with open(file_path) as f:
+        content = f.readlines()
+    chars = sum(len(line) for line in content)
+    words = sum(len(line.split()) for line in content)
+    lines = len(content)
+    freq = sum(line.count(word) for line in content)
+    return chars, words, lines, freq
+if __name__ == "__main__":
+    path = input("Filename: ")
+    word = input("Word to count: ")
+    ch, w, l, f = file_count(path, word)
+    print(f"Chars: {ch}, Words: {w}, Lines: {l}, Word '{word}': {f}")

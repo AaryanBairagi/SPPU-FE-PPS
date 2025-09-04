@@ -1,0 +1,19 @@
+def student_result(marks):
+    if any(m < 40 for m in marks):
+        return "Fail"
+    avg = sum(marks) / len(marks)
+    if avg >= 75:
+        return "Distinction"
+    elif avg >= 60:
+        return "First Division"
+    elif avg >= 50:
+        return "Second Division"
+    elif avg >= 40:
+        return "Third Division"
+    else:
+        return "Fail"
+
+if __name__ == "__main__":
+    print("Enter marks for 5 courses: ")
+    marks = [float(input()) for _ in range(5)]
+    print("Result:", student_result(marks))

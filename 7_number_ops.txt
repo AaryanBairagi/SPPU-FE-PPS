@@ -1,0 +1,22 @@
+import math
+def is_prime(n):
+    if n < 2: return False
+    for i in range(2, int(n**0.5)+1):
+        if n%i==0: return False
+    return True
+def prime_factors(n):
+    i, factors = 2, []
+    while n > 1:
+        if n%i == 0:
+            factors.append(i)
+            n //= i
+        else: i += 1
+    return factors
+if __name__ == "__main__":
+    n = int(input("Enter number: "))
+    print("Square root:", math.sqrt(n))
+    print("Square:", n**2)
+    print("Cube:", n**3)
+    print("Prime:", is_prime(n))
+    print("Factorial:", math.factorial(n))
+    print("Prime Factors:", prime_factors(n))

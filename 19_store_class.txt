@@ -1,0 +1,26 @@
+class Product:
+    def __init__(self, code, name, price):
+        self.code = code; self.name = name; self.price = price
+class Store:
+    def __init__(self):
+        self.products = []
+    def add_product(self, code, name, price):
+        self.products.append(Product(code, name, price))
+    def display(self):
+        for p in self.products:
+            print(f"{p.code}: {p.name} price: {p.price}")
+    def bill(self, code, qty):
+        for p in self.products:
+            if p.code == code:
+                print(f"Bill: {p.price} * {qty} = {p.price * qty}")
+if __name__ == "__main__":
+    s = Store()
+    s.add_product('1001','Pen',10)
+    s.add_product('1002','Pencil',5)
+    s.add_product('1003','Copy',50)
+    s.display()
+    while True:
+        c = input("Product code (or 'exit'): ")
+        if c == 'exit': break
+        q = int(input("Quantity: "))
+        s.bill(c, q)

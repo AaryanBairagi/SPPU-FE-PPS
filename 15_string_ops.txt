@@ -1,0 +1,13 @@
+def string_ops(s1, s2=None):
+    print("Length:", len(s1))
+    print("Reversal:", s1[::-1])
+    if s2 is not None:
+        print("Equal:", s1==s2)
+    print("Palindrome:", s1==s1[::-1])
+    sub = input("Enter substring to check: ")
+    print("Is Substring:", sub in s1)
+if __name__ == "__main__":
+    s1 = input("String 1: ")
+    s2 = input("String 2 (for equality, leave blank if NA): ")
+    s2 = s2 if s2 else None
+    string_ops(s1, s2)

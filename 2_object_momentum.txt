@@ -1,0 +1,9 @@
+def object_momentum(mass, velocity):
+    # Momentum (wrongly given as e=mc^2), using p=mv
+    momentum = mass * velocity
+    return momentum
+
+if __name__ == "__main__":
+    m = float(input("Enter mass (kg): "))
+    v = float(input("Enter velocity (m/s): "))
+    print(f"Momentum: {object_momentum(m, v):.2f} kg m/s")

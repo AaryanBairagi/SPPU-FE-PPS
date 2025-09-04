@@ -1,0 +1,14 @@
+def smallest_divisor(n, m):
+    for i in range(2, min(n, m)+1):
+        if n%i == 0 and m%i == 0:
+            return i
+    return None
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+if __name__ == "__main__":
+    n = int(input("1st number: "))
+    m = int(input("2nd number: "))
+    print("Smallest divisor:", smallest_divisor(n, m))
+    print("GCD:", gcd(n, m))

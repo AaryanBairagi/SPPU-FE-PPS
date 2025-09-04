@@ -1,0 +1,9 @@
+def transform_line(line):
+    # Replace full stops with commas and swap case
+    return line.replace('.', ',').swapcase()
+if __name__ == "__main__":
+    f1 = input("Source file: ")
+    f2 = input("Destination file: ")
+    with open(f1) as inp, open(f2, 'w') as out:
+        for line in inp:
+            out.write(transform_line(line))

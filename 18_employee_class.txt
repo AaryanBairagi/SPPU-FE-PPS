@@ -1,0 +1,29 @@
+class Employee:
+    count = 0
+    male = 0
+    female = 0
+    all_emp = []
+    def __init__(self, name, designation, gender, doj, salary):
+        self.name=name; self.designation=designation
+        self.gender=gender; self.doj=doj; self.salary=salary
+        Employee.all_emp.append(self)
+        Employee.count += 1
+        if gender.lower() == "male": Employee.male += 1
+        elif gender.lower() == "female": Employee.female += 1
+    @classmethod
+    def more_than_10k(cls):
+        return [e.name for e in cls.all_emp if e.salary > 10000]
+    @classmethod
+    def asst_mgr(cls):
+        return [e.name for e in cls.all_emp if e.designation.lower() == "asst manager"]
+if __name__ == "__main__":
+    n = int(input("How many employees?: "))
+    for _ in range(n):
+        name = input("Name: "); desig = input("Designation: ")
+        gender = input("Gender: "); doj = input("Date of Joining: ")
+        salary = float(input("Salary: "))
+        Employee(name, desig, gender, doj, salary)
+    print("Total:", Employee.count)
+    print("Males:", Employee.male, "Females:", Employee.female)
+    print("Salary>10k:", Employee.more_than_10k())
+    print("Asst Manager:", Employee.asst_mgr())

@@ -1,0 +1,5 @@
+def bin_to_dec(b):
+    return int(b, 2)
+if __name__ == "__main__":
+    b = input("Enter binary: ")
+    print("Decimal:", bin_to_dec(b))
